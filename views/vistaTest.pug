@@ -1,0 +1,22 @@
+html 
+    head 
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    body 
+        div.m-3.pb-5.bg-light
+            h2.text-primary= 'Vista de Productos Fake'
+            br            
+            if hayProductos 
+                table.table.table-dark
+                    tr 
+                        th Nombre 
+                        th Precio 
+                        th Foto 
+                    each val in listaProductos 
+                        tr 
+                            td= val.title
+                            td= val.price 
+                            td 
+                                img(src=val.thumbnail, width="32" height="32")
+            else 
+                div.alert.alert-warning            
+                    strong 'No se encontraron productos!'

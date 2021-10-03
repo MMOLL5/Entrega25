@@ -1,0 +1,60 @@
+html
+    head
+        meta(charset="UTF-8")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")        
+        title='Alta de Productos'
+    body    
+        div(class="m-5 pb-5 bg-primary")
+            h1.text-white= 'Bienvenido'
+            form(id="logOut-form" action="/logout")
+                button(class="btn btn-warning")="Desloguear"
+        div(class="m-5 pb-5 bg-light")
+            h2.text-primary= 'Ingrese Producto'
+            br
+            form(id="prod-form")         
+                label.strong.em= 'Nombre'
+                br
+                input(type="text" id="title" name="title" placeholder="Calculadora")
+                br
+                label.strong.em= 'Precio'
+                br
+                input(type="number" id="price" name="price" placeholder="$25")
+                br
+                label.strong.em= 'URL Foto'
+                br
+                input(type="text" id="thumbnail" name="thumbnail" placeholder="https://www.iconfinder.com")
+                br
+                br
+                button(class="btn btn-success" onclick="sendData(this)")="Enviar"
+                br
+                br
+                table(class="table table-dark" id="messages")     
+        div(class="m-5 pb-5 bg-light")
+            h2.text-primary= 'Centro de Mensajes'
+            br
+            form(id="chat-form")                                
+                input(type="email" class="form-control" id="mail" name="email" size="10" placeholder="diego@Outlook.com")
+                hr
+                input(type="nombre" class="form-control" id="nombre" name="nombre" size="10" placeholder="Daniel")
+                hr
+                input(type="apellido" class="form-control" id="apellido" name="apellido" size="10" placeholder="Sanchez")
+                hr
+                input(type="edad" class="form-control" id="edad" name="edad" size="10" placeholder="52")
+                hr
+                input(type="alias" class="form-control" id="alias" name="alias" size="10" placeholder="Dani")
+                hr
+                input(type="avatar" class="form-control" id="avatar" name="avatar" size="10" placeholder="https://cdn4.iconfinder.com/data/icons/people-avatar-filled-outline/64/man_adult_mustache_people_woman_father_avatar-128.png")
+                hr
+                div(class="mt-4" id="mensajesContainer")
+                br
+                div
+                    input(type="text" id="texto" name="texto" placeholder="Ingresa un mensaje...")
+                    button(class="btn btn-primary" )="Enviar!"
+        script(src="/socket.io/socket.io.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js" integrity="sha512-oFOCo2/3DtjrJG4N27BjSLQWoiBv171sK6a+JiWjp/7agxC2nCUP358AqzxkBUb5jX8g6CYLPdSKQTbC0weCwA==" crossorigin="anonymous")
+        script(src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js")
+        script(src="main.js")
+        script(src="js/main.js")
